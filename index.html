@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Пример страницы с JavaScript</title>
+	<style>
+      #frame {
+        display: block;
+        margin: 0 auto;
+        width: 100%;
+        height: 100vh;
+        border: none;
+      }
+  
+    </style>
+    
+    
+	<script>
+		function getParameterByName(paramName) {
+              var urlParams = new URLSearchParams(window.location.search);
+              return urlParams.get(paramName);
+            }
+
+		function showParams() {
+			var vkUserId = getParameterByName('vk_user_id');
+			var frame = document.getElementById('frame');
+			if (vkUserId) {
+				var src = frame.src + vkUserId;
+				frame.setAttribute('src', src);
+			}
+		}
+	</script>
+</head>
+<body onload="showParams()">
+    <script src="https://unpkg.com/@vkontakte/vk-bridge/dist/browser.min.js"></script>
+    <script>
+  // Отправляет событие инициализации нативному клиенту
+      vkBridge.send('VKWebAppInit');
+    </script>
+	<script src="https://yastatic.net/s3/frontend/forms/_/embed.js"></script>
+    <iframe id="frame" src="https://forms.yandex.ru/u/5cf945943632032bd7182d71/?vk_user_id=" frameborder="0" name="ya-form-5cf945943632032bd7182d71"></iframe>
+
+</body>
+</html>
