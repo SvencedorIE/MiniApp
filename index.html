@@ -36,6 +36,19 @@
     <script>
   // Отправляет событие инициализации нативному клиенту
       vkBridge.send('VKWebAppInit');
+	vkBridge.send('VKWebAppAllowMessagesFromGroup', {
+	  group_id: 158137911
+	  })
+	  .then((data) => { 
+	    if (data.result) {
+	      // Пользователь разрешил отправку сообщений от имени сообщества
+	    }
+	  })
+	  .catch((error) => {
+	    // Ошибка
+	    console.log(error);
+	  });
+	    
     </script>
 	<script src="https://yastatic.net/s3/frontend/forms/_/embed.js"></script>
     <iframe id="frame" src="https://forms.yandex.ru/u/5cf945943632032bd7182d71/?vk_user_id=" frameborder="0" name="ya-form-5cf945943632032bd7182d71"></iframe>
