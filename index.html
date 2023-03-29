@@ -1,3 +1,33 @@
+Skip to content
+Search or jump to…
+Pull requests
+Issues
+Codespaces
+Marketplace
+Explore
+ 
+@SvencedorIE 
+SvencedorIE
+/
+MiniApp
+Public
+Cannot fork because you own this repository and are not a member of any organizations.
+Code
+Issues
+Pull requests
+Actions
+Projects
+Security
+Insights
+Settings
+MiniApp/index.html
+@SvencedorIE
+SvencedorIE Update index.html
+Latest commit 4e22b45 2 hours ago
+ History
+ 1 contributor
+57 lines (51 sloc)  1.56 KB
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,7 +55,7 @@
 			var vkUserId = getParameterByName('vk_user_id');
 			var frame = document.getElementById('frame');
 			if (vkUserId) {
-				var src = frame.src + vkUserId;
+				var src = frame.src + '?vk_user_id='+ vkUserId + '&vk_url=vk.com/id' + vkUserId;
 				frame.setAttribute('src', src);
 			}
 		}
@@ -51,7 +81,7 @@
 	    
     </script>
 	<script src="https://yastatic.net/s3/frontend/forms/_/embed.js"></script>
-    <iframe id="frame" src="https://forms.yandex.ru/cloud/6423e82b5056900b21bbd498/?vk_user_id=" frameborder="0" name="ya-form-6423e82b5056900b21bbd498"></iframe>
+    <iframe id="frame" src="https://forms.yandex.ru/cloud/6423e82b5056900b21bbd498/" frameborder="0" name="ya-form-6423e82b5056900b21bbd498"></iframe>
 
 </body>
 </html>
